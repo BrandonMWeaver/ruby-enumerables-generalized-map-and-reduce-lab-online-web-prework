@@ -11,7 +11,8 @@ end
 def reduce(source_array, starting_point = 0)
   
   ssource_array.each do |element|
-    
+    starting_point += yield(starting_point, element)
   end
   
+  return starting_point
 end
