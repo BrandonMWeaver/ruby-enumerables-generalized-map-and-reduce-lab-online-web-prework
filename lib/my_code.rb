@@ -9,11 +9,10 @@ def map(source_array)
 end
 
 def reduce(source_array, starting_point = 0)
-  value = nil
   
   source_array.each do |element|
-    value = yield(starting_point, element)
+    starting_point = yield(starting_point, element)
   end
   
-  return value
+  return starting_point
 end
