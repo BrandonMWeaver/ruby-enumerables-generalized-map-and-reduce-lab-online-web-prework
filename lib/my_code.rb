@@ -9,9 +9,5 @@ def map(source_array)
 end
 
 def reduce(source_array, starting_point = 0)
-  
-  source_array.each do |element|
-    yield(starting_point, element)
-  end
-  
+  temp = yield(starting_point, source_array)
 end
