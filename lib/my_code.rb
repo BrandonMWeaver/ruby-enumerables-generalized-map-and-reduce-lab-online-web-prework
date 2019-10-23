@@ -11,7 +11,7 @@ end
 def reduce(source_array, starting_point = 0)
   
   source_array.each do |element|
-    if yield(starting_point, element)
+    if yield(starting_point, element) == true
       return true
     elsif !yield(starting_point, element)
       return false
