@@ -10,8 +10,9 @@ end
 
 def reduce(source_array, starting_point = 0)
   
-  source_array.each do |element|
+  value = source_array.each do |element|
     yield(starting_point, element)
   end
   
+  return value
 end
