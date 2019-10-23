@@ -9,14 +9,13 @@ def map(source_array)
 end
 
 def reduce(source_array, starting_point = 0)
-  true_or_false = false
-  
-  source_array.each do |element|
-    starting_point = yield(starting_point, element)
-  end
   
   if starting_point == 0
     return true
+  end
+  
+  source_array.each do |element|
+    starting_point = yield(starting_point, element)
   end
   
   return starting_point
